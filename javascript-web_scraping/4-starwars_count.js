@@ -3,13 +3,20 @@
 const request = require('request');
 const url = process.argv[2];
 const targetId = 18;
+let count = 0;
 
-request(url, (err, response, body) => {
+request.get(url, function (err, response, body) {
   if (err) {
     console.error(err);
   } else {
     const title = JSON.parse(body).results;
-    const numberFilm = title.filter((film) => film.characters.includes(`https://swapi-api.hbtn.io/api/people/${targetId}/`));
-    console.log(numberFilm.length);
+    for(const result of title) {
+      for (const character of result.characters) {
+        if (character.include(targetId)) {
+          coount += 1;
+        }
+      }
+    }
   }
+  console.log(count);
 });

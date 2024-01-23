@@ -10,7 +10,7 @@ request.get(url, function (err, response, body) {
     console.error(err);
   } else {
     const title = JSON.parse(body).results;
-    for(const result of title) {
+    for (const result of title) {
       for (const character of result.characters) {
         if (character.include(targetId)) {
           count += 1;

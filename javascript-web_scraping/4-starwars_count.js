@@ -7,12 +7,12 @@ let count = 0;
 
 request.get(url, function (err, response, body) {
   if (err) {
-    console.error(err);
+    console.log('error:', err);
   } else {
     const title = JSON.parse(body).results;
     for (const result of title) {
       for (const character of result.characters) {
-        if (character.include(targetId)) {
+        if (character.includes(targetId)) {
           count += 1;
         }
       }

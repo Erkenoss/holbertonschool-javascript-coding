@@ -13,7 +13,7 @@ request.get(url, function (err, response, body) {
     for(const result of title) {
       for (const character of result.characters) {
         if (character.include(targetId)) {
-          coount += 1;
+          count += 1;
         }
       }
     }

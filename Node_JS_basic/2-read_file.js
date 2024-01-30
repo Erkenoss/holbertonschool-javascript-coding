@@ -26,8 +26,8 @@ module.exports = function countStudents(path) {
     }
 
     console.log(`Number of students: ${csCount + sweCount}`);
-    console.log(`Number of students in CS: ${csCount}. ${csList.join(', ')}`);
-    console.log(`Number of students in SWE: ${sweCount}. ${sweList.join(', ')}`);
+    console.log(`Number of students in CS: ${csCount}. List: ${csList.join(', ')}`);
+    console.log(`Number of students in SWE: ${sweCount}. List: ${sweList.join(', ')}`);
 
   } catch (err) {
     throw new Error('Cannot load the database');

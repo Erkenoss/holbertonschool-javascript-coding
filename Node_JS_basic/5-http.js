@@ -11,8 +11,8 @@ const app = http.createServer(async (req, res) => {
   } else if (req.url === '/students') {
     try {
       res.writeHead(200, { 'Content-Type': 'text/plain' });
-      response = await countStudents(databasePath);
-      res.end(`This is the list of our students\n` + response);
+      const response = await countStudents(databasePath);
+      res.end(`This is the list of our students\n${response}`);
     } catch (error) {
       res.writeHead(500, { 'Content-Type': 'text/plain' });
       res.end('Internal Server Error');

@@ -3,21 +3,20 @@ const fs = require('fs');
 function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (error, data) => {
-      if (error) {
-        reject(new Error('Cannot load the database'));
-      } else {
-        const lines = data.trim().split('\n');
+      const lines = data.trim().split('\n');
 
-        let csCount = 0;
-        let sweCount = 0;
-        const csList = [];
-        const sweList = [];
+      let csCount = 0;
+      let sweCount = 0;
+      const csList = [];
+      const sweList = [];
 
-        for (const line of lines) {
-          const fields = line.split(',');
-          const [firstName, lastName, age, field] = fields;
-
-          if (firstName && lastName && age && field) {
+      for (const line of lines) {
+        const fields = line.split(',');
+        const [firstName, lastName, age, field] = fields;
+        if (error)
+          reject(new Error('Cannot load the database'));
+        
+        if (firstName && lastName && age && field) {
             if (field === 'CS') {
               csCount += 1;
               csList.push(firstName);

@@ -4,7 +4,7 @@ function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (error, data) => {
       if (error) {
-        reject(new Error('Cannot load the database'));
+        reject(new Error('Error: Cannot load the database'));
       } else {
         const lines = data.trim().split('\n');
 

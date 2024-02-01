@@ -26,14 +26,14 @@ module.exports = function countStudents(path) {
           }
         }
 
-        console.log(`Number of students: ${csCount + sweCount}`);
-        console.log(`Number of students in CS: ${csCount}. List: ${csList.join(', ')}`);
-        console.log(`Number of students in SWE: ${sweCount}. List: ${sweList.join(', ')}`);
+        let response = `Number of students: ${csCount + sweCount}\n`;
+        response += `Number of students in CS: ${csCount}. List: ${csList.join(', ')}\n`;
+        response += `Number of students in SWE: ${sweCount}. List: ${sweList.join(', ')}`;
 
-        resolve();
+        resolve(response);
       })
       .catch(() => {
-        reject(new Error('Cannot load the database'));
+        reject('Cannot load the database');
       });
   });
 };

@@ -29,7 +29,7 @@ module.exports = function countStudents(path) {
         let response = `Number of students: ${csCount + sweCount}\n`;
         response += `Number of students in CS: ${csCount}. List: ${csList.join(', ')}\n`;
         response += `Number of students in SWE: ${sweCount}. List: ${sweList.join(', ')}`;
-
+        console.log(response);
         resolve(response);
       })
       .catch(() => {

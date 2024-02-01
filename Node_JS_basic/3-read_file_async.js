@@ -33,7 +33,7 @@ module.exports = function countStudents(path) {
         resolve(response);
       })
       .catch(() => {
-        reject('Cannot load the database');
+        reject(new Error('Cannot load the database'));
       });
   });
 };
